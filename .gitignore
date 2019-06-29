@@ -1,0 +1,8 @@
+# Ignore files with no extensions
+*
+!*.*
+!*/
+# end
+.vscode
+*.code-workspace
+
