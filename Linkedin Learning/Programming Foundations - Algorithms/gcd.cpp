@@ -3,13 +3,19 @@
 using namespace std;
 
 // ensure: a > b
+int gcd_r(int a, int b) {
+    int r = a % b;
+    if(r == 0) {return b;}
+    return gcd_r(b, r);
+}
+
+// ensure: a > b
 int gcd(int a, int b) {
-    int r = a / b;
-    // if(r == 0) {return b;}
-    // return gcd(b, r);
+    int r = a % b;
     while(r != 0) {
-        a = b, b = r;
-        r = a / b;
+        a = b;
+        b = r;
+        r = a % b;
     }
     return b;
 }
